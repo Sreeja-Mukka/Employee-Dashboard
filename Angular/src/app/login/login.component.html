@@ -1,0 +1,19 @@
+&nbsp;
+<div class="container">
+  <h3 style="text-align: center; color: royalblue;">The Professional Consultancy Services</h3>
+    <form>
+    <div class="form-group">
+      <label for="name">User Name</label>
+     
+      <input type="text" class="form-control" id="user" [(ngModel)]="username" name="username" placeholder="Enter Username">
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+
+      <input type="password" class="form-control" id="pass" [(ngModel)]="password" name="userpass" placeholder="Enter Password">
+    </div>
+    <br>
+    <button type="submit" (click)="getUserType()" class="btn btn-primary">Submit</button>
+  </form>
+</div>

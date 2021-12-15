@@ -1,0 +1,45 @@
+<div>
+    <nav class="navbar navbar-expand-sm  navbar-light bg-primary">
+        <i class="fa fa-cog fa-2x " style="size: 30px; color: white;"></i> <a class="navbar-brand" style="color: white; font-size: 30px;" href="#">Add Certificate</a>
+    </nav>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 70px;">
+        <div class="text-right">
+            <a href="#" (click)="goToEmployeeList()" routerLinkActive="active" style="padding-right: 60px; margin-left: 10px;margin-right: 20px;"><i class="fa fa-arrow-left"></i>Back to DashBoard</a>
+            <button  (click)="addCert()" class="btn  btn-success " style="padding-right: 60px; margin-right: 20px;"><i class="fa fa-check" ></i> &nbsp; Save Certificate</button>
+          </div> 
+    </nav>
+    &nbsp;
+    <div class="container">
+        <div class="bg-light">
+            <span class="d-block ">
+                <h3>Certificate Skill</h3>
+              </span>
+            <form>
+                <div class="form-group">
+                    <label >Certificate Name</label>
+                    <input type="text" class="form-control" id="name"  
+                    [(ngModel)] = "cer.certName" name="CertName" placeholder="Enter name" required/>
+                </div>
+                &nbsp;
+                <div class="form-group"> 
+                    <label>Certificate Category &nbsp;</label> 
+                    <select id="certs" class="form-control" required="required"  [(ngModel)] = "cer.certCategory" name="CertCat">
+                        <option value="">Choose</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Advanced">Advanced</option>
+                        <option value="Professional">Professional</option>
+                    </select>
+                </div>
+                &nbsp;
+                <div class="form-group">
+                    <label > Certificate Description &nbsp;</label>
+                    <input type="text" style="height:90px; " class="form-control" id="bio" placeholder="Describe Certification">
+                </div>
+                <div>
+                    <span>&nbsp;</span>
+                </div>
+            </form>
+            </div>
+    </div>
+    

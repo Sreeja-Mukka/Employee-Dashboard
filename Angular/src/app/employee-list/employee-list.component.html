@@ -1,0 +1,131 @@
+<div style="margin: 0;">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark " style="height: 30px;">
+      <a class="navbar-brand" routerLink="/employeeList" routerLinkActive="active" style="padding-left: 10px;">Professional Consultancy Services</a>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active ">
+            <a class="nav-link  py-0" routerLink="/employeeList" routerLinkActive="active" >Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  py-0" routerLink="/employeeList" routerLinkActive="active" href="#">Employees</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  py-0 " >Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  py-0" >Certificates</a>
+          </li>
+        </ul>
+      </div>
+      <i class="fa fa-user" style="size: 30px ; color: white;"></i><a class="nav-link " href="#">Welcome Ravi</a>
+      <i class="fa fa-user-times" routerLink="" style="size: 30px ; color: white;"></i><a class="nav-link " href="#">Logout</a>
+    </nav>
+    
+</div>
+<nav class="navbar navbar-expand-sm  navbar-light bg-primary">
+    <i class="fa fa-cog fa-2x " style="size: 30px; color: white;"></i> <a class="navbar-brand" style="color: white; font-size: 30px;" routerLink="/employeeList" routerLinkActive="active" href="#">Dashboard</a>
+  </nav>
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 70px;">
+      <div class="text-right">
+          <button routerLink="/addEmp" routerLinkActive="active" class="btn  btn-primary  " style="padding-right: 60px; margin-left: 10px;margin-right: 20px;" ><i class="fa fa-plus"></i> &nbsp; Add Employees</button>
+          <input type="search" id="query" name="q" style="padding-right: 10px; margin-left: 30px;" [(ngModel)]="search" placeholder="Search..." />
+          <button class="btn btn-warning" (click)="submitted()" style="margin-left: 5px;">Search</button>
+          <!-- <button class="btn  btn-success  " style="padding-right: 100px; margin-right: 20px; "><i class="fa fa-plus"></i> &nbsp; Add Skills</button> -->
+          <!-- <button class="btn  btn-warning  " style="padding-right: 60px; margin-right: 20px;"><i class="fa fa-plus"></i> &nbsp; Add Certificates</button> -->
+      </div> 
+    </nav>
+  </div>
+  &nbsp;
+<div class="div-nav">
+    <div class="row">
+        <div class="col-sm-10">
+            <h3 class="table-heading">Latest Updates</h3>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <!-- <th>#</th> -->
+                            <th>Employee Name</th>
+                            <th>Skill Name</th>
+                            <th>Category</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let emp of employees">
+                            <!-- <td>{{emp.eid}}</td> -->
+                            <td>{{emp.empname | uppercase}}</td>
+                            <td>{{emp.skillSet[0]?.skillName | uppercase}}</td>
+                            <td>{{emp.skillSet[0]?.skillCat | uppercase}}</td>
+                            <td>
+                                <button class = "btn btn-info" (click)="detailsOfEmployee(emp.eid)" > Details</button>
+                                <button class = "btn btn-danger" (click)="deleteEmployee(emp.eid)" style="margin-left: 15px"  > Delete Employee</button>
+                
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </nav>
+        </div>
+            <div class="col-sm-2">
+                <ul style="list-style: none;">
+                    <li > 
+                        <div class="card bg-primary" style="height: 130px;">
+                            <ul style="list-style: none;">
+                                <li>
+                                    <h6 style="color: white;">
+                                        Skills Upgraged
+                                    </h6>
+                                </li>
+                                &nbsp;
+                                <li>
+                                    <i class="fa fa-pencil fa-2x" style="color: white;"></i>&nbsp; &nbsp; &nbsp;<span style="font-size: 25px; color: white;">{{skillcount}}</span>
+                                </li>
+                               
+                             
+                            </ul>    
+                        </div>
+                     </li>
+                    &nbsp;
+
+                     <li > 
+                        <div class="card bg-success" style="height: 130px;">
+                            <ul style="list-style: none;">
+                                <li>
+                                    <h6 style="color: white;">
+                                        Certificates
+                                    </h6>
+                                </li>
+                                &nbsp;
+                                <li>
+                                    <i class="fa fa-folder fa-2x" style="color: white;"></i>&nbsp; &nbsp; &nbsp;<span style="font-size: 25px; color: white;">{{certcount}}</span>
+                                </li>
+                              
+                            </ul>    
+                        </div>
+                        
+                     </li>
+                    &nbsp;
+                     <li > 
+                        <div class="card bg-warning" style="height: 130px;">
+                            <ul style="list-style: none;">
+                                <li>
+                                    <h6 style="color: white;">
+                                        Employees
+                                    </h6>
+                                </li>
+                                &nbsp;
+                                <li>
+                                    <i class="fa fa-users fa-2x" style="color: white;"></i>&nbsp; &nbsp;&nbsp;<span style="font-size: 25px; color: white;">{{empcount}}</span>
+                                </li>
+                                &nbsp;
+                            </ul>    
+                        </div>
+                     </li>
+                </ul>
+            </div>
+    </div>
+    
+</div>

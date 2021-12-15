@@ -1,0 +1,46 @@
+<div>
+<nav class="navbar navbar-expand-sm  navbar-light bg-primary">
+    <i class="fa fa-cog fa-2x " style="size: 30px; color: white;"></i> <a class="navbar-brand" style="color: white; font-size: 30px;" href="#">Add Skill</a>
+</nav>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 70px;">
+    <div class="text-right">
+        <a href="#" routerLink="['/empShow', id]" routerLinkActive="active" style="padding-right: 60px; margin-left: 10px;margin-right: 20px;"><i class="fa fa-arrow-left"></i>Back to DashBoard</a>
+        <button (click)="addSkill()" class="btn  btn-success " style="padding-right: 60px; margin-right: 20px;"><i class="fa fa-check"></i> &nbsp; Save Skill</button>
+      </div> 
+</nav>
+&nbsp;
+<div class="container">
+    <div class="bg-light">
+        <span class="d-block ">
+            <h3>Add Skill</h3>
+          </span>
+        <form>
+            <div class="form-group">
+                <label >Skill Name</label>
+                <input type="text" class="form-control" id="name"  
+                [(ngModel)] = "skill.skillName" name="SkillName" placeholder="Enter Skill name">
+            </div>
+            &nbsp;
+            <div class="form-group">
+                <label >Skill Category &nbsp;</label>
+                <select id="roles" class="form-control" [(ngModel)] = "skill.skillCat" name="skillCat">
+                    <option>Choose</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Java Development">Java Development</option>
+                    <option value="Testing">Testing</option>
+                    <option value="Management">Management</option>
+                    <option value="Communication">Communication</option>
+                </select>
+            </div>
+            &nbsp;
+            <div class="form-group">
+                <label > Skill Description &nbsp;</label>
+                <input type="text" style="height:90px;" class="form-control" id="bio" placeholder="Describe Skill">
+            </div>
+            <div>
+                <span>&nbsp;</span>
+            </div>
+        </form>
+        </div>
+</div>

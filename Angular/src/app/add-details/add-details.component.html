@@ -1,0 +1,56 @@
+<div>
+    <nav class="navbar navbar-expand-sm  navbar-light bg-primary">
+        <i class="fa fa-cog fa-2x " style="size: 30px; color: white;"></i> <a class="navbar-brand" style="color: white; font-size: 30px;" href="#">DashBoard</a>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 70px;">
+        <div class="text-right">
+            <a href="#" routerLink="/employeeList" routerLinkActive="active" style="padding-right: 60px; margin-left: 10px;margin-right: 20px;"><i class="fa fa-arrow-left"></i>Back to DashBoard</a>
+            <!-- <button [routerLink] = "['/addSkill', id]" class="nav-link" routerLinkActive="active" class="btn  btn-success  " style="padding-right: 100px; margin-right: 20px; "><i class="fa fa-plus"></i> &nbsp; Add Skills</button> -->
+            <!-- <button [routerLink] = "['/addCert', id]" class="nav-link" routerLinkActive="active" class="btn  btn-warning  " style="padding-right: 50px; margin-right: 20px; "><i class="fa fa-plus"></i> &nbsp; Add Certificates</button> -->
+          </div> 
+    </nav>
+</div>
+    &nbsp;
+    <div class="container">
+        <div class="bg-light">
+            <h2 style="margin-left: 10px;text-align: center;">Employee Details</h2>
+            &nbsp;
+            <label style="font-weight: bold;color: steelblue; font-size: 20px;">Employee Id</label>
+            <p style="margin-left: 10px; font-size: 25px;">{{employee.eid}}</p>
+            <br>
+            &nbsp;
+            <label style="font-weight: bold;color: steelblue; font-size: 20px;" >Employee Name</label>
+            <p style="margin-left: 10px; font-size: 25px;">{{employee.empname}}</p>
+            &nbsp;
+            <label style="font-weight: bold;color: steelblue; font-size: 20px;">Employee Skills</label>
+            
+            <table class="table table-hover" > 
+                <thead>
+                    <th>Skill Name</th>
+                    <th>Skill Category</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let skill of employee.skillSet"> 
+                        <td>{{skill.skillName}}</td>
+                        <td>{{skill.skillCat}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <label style="font-weight: bold;color: steelblue; font-size: 20px;">Employee Certificates</label>
+            
+            <table class="table table-hover">
+                <thead>
+                    <th>Certificate Name</th>
+                    <th>Certificate Category</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cert of employee.certSet">
+                        <td>{{cert.certName}}</td>
+                        <td>{{cert.certCategory}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    

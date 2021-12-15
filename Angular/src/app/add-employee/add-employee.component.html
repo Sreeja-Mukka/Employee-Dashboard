@@ -1,0 +1,70 @@
+
+<nav class="navbar navbar-expand-sm  navbar-light bg-primary">
+    <i class="fa fa-cog fa-2x " style="size: 30px; color: white;"></i> <a class="navbar-brand" style="color: white; font-size: 30px;" href="#">Dashboard</a>
+  </nav>
+<div class="div-nav">
+    <div class="row">
+        <div class="col-sm-10">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 70px;">
+                  <div class="text-right">
+                      <a href="#" routerLink="/employeeList" routerLinkActive="active" style="padding-right: 60px; margin-left: 10px;margin-right: 20px;"><i class="fa fa-arrow-left"></i>Back to DashBoard </a>
+                      <button (click)="onSubmit()" class="btn  btn-success " style="padding-right: 60px; margin-right: 20px;"><i class="fa fa-check"></i> &nbsp; Save Employee</button>
+                    </div> 
+                </nav>
+                &nbsp;
+                <div class="bg-light">
+                <span class="d-block ">
+                    <h3>Create Profile</h3>
+                  </span>
+                <form>
+                    <div class="form-group">
+                        <label >Employee Name</label>
+                        <input type="text" class="form-control" id="name"  
+                        [(ngModel)] = "employee.empname" name="empName" placeholder="Enter name">
+                    </div>
+                    &nbsp;
+                    <div class="form-group"> 
+                        <label >Employee Role &nbsp;</label> 
+                        <select id="roles" class="form-control" [(ngModel)] = "employee.emprole" name="empRole"> 
+                            <option>Select</option>
+                            <option  value="Employee">Employee</option>
+                            <option value="Manager">Manager</option>
+                        </select>
+                    </div>
+                    &nbsp;
+                    <div class="form-group">
+                        <label > Employee Bio &nbsp;</label>
+                        <input type="text" style="height:90px;" class="form-control" id="bio" placeholder="Enter Bio">
+                    </div>
+                    <div>
+                        <span>&nbsp;</span>
+                    </div>
+                </form>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <ul style="list-style: none;">
+                    <li>&nbsp;</li>
+                    <li>&nbsp;</li>
+                    <li>&nbsp;</li>
+                    <li>&nbsp;</li>
+                    <li > 
+                        <h3>Your Avatar</h3>
+                     </li>
+                     <li > 
+                        <div class="card" style="height: 130px;">  
+                        </div>
+                    </li>
+                    &nbsp;
+                    <li>
+                        <form>
+                            <div class="form-group">
+                              <input type="file" class="form-control-file " id="exampleFormControlFile1">
+                            </div>
+                        </form> 
+                    </li>
+                </ul>
+            </div>
+    </div>    
+</div>
+

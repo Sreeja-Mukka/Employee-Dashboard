@@ -1,0 +1,67 @@
+<div style="margin: 0;">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark " style="height: 30px;">
+      <a class="navbar-brand" routerLink="['/empShow', id]" routerLinkActive="active" style="padding-left: 10px;">Professional Consultancy Services</a>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+      </div>
+      <i class="fa fa-user" style="size: 30px ; color: white;"></i><a class="nav-link " href="#">Welcome {{employee.empname}}</a>
+      <i class="fa fa-user-times" routerLink="" style="size: 30px ; color: white;"></i><a class="nav-link " href="#">Logout</a>
+    </nav>
+    
+</div>
+<nav class="navbar navbar-expand-sm  navbar-light bg-primary">
+    <i class="fa fa-cog fa-2x " style="size: 30px; color: white;"></i> <a class="navbar-brand" style="color: white; font-size: 30px;" >Dashboard</a>
+  </nav>
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 70px;">
+      <div class="text-right">
+        <!-- <a href="#" routerLink="/empDetails/id" routerLinkActive="active" style="padding-right: 60px; margin-left: 10px;margin-right: 20px;"><i class="fa fa-arrow-left"></i>Back to DashBoard</a> -->
+          <button class="btn  btn-success  " (click)="goSkills()" style="padding-right: 100px; margin-left: 10px; margin-right: 20px; "><i class="fa fa-plus"></i> &nbsp; Add Skills</button>
+          <button class="btn  btn-warning  "  (click)="goCert()" style="padding-right: 60px; margin-right: 20px;"><i class="fa fa-plus"></i> &nbsp; Add Certificates</button>
+          <button class="btn  btn-info  "  (click)="updateEmployee(id)" style="padding-right: 60px; margin-right: 20px;"><i class="fa fa-pencil"></i> &nbsp; Edit Profile</button>
+        
+        </div> 
+    </nav>
+</div>
+&nbsp;
+    <div class="container">
+        <div class="bg-light">
+            <h2 style="text-align: center;">Employee Details</h2>
+            <label style="font-weight: bold; color: steelblue;">Employee Name</label>
+            <p style="font-size: 25px;">{{employee.empname}}<p>
+            <br>
+            <label style="font-weight: bold;color: steelblue;">Employee Skills</label>
+            <table class=" table table-hover table-dark.">
+                <thead >
+                    <th class="info">Skill Name</th>
+                    <th class="info">Skill Category</th>
+                    <!-- <th>Actions</th> -->
+                </thead>
+                <tbody>
+                    <tr *ngFor="let ski of skills">
+                        <td>{{ski.skillName}}</td>
+                        <td>{{ski.skillCat}}</td>
+                        <!-- <td><button (click)="delSkill(ski.sid)" class="btn btn-danger">Delete</button></td> -->
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <label style="font-weight: bold;color: steelblue;">Employee Certificates</label>
+            <table class="table table-hover">
+                <thead>
+                    <th>Certificate Name</th>
+                    <th>Certificate Category</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cert of certs">
+                        <td>{{cert.certName}}</td>
+                        <td>{{cert.certCategory}}</td>
+                        <!-- <td><button (click)="delCert(cert.cid)" class="btn btn-danger">Delete</button></td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    

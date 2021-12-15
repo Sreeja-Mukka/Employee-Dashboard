@@ -1,0 +1,13 @@
+.table-heading{
+    width: 100%; 
+    height: 60px; 
+    background-color: rgba(var(--bs-light-rgb),var(--bs-bg-opacity))!important; 
+    --bs-bg-opacity: 1;
+    padding-left: 10px;
+    padding-top: 10px;
+    margin: 0;
+}
+.div-nav{
+    padding-left: 30px;
+    padding-right: 30px;
+}
